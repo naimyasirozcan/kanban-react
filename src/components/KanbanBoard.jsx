@@ -1,12 +1,8 @@
 import KanbanCol from "./KanbanCol"
-import userDataJSON from "../assets/data/kanbanData.json"
-
 import { useState } from "react"
 
-function KanbanBoard() {
 
-    const [userData, setUserData] = useState(userDataJSON)
-
+function KanbanBoard({taskData,setTaskData}) {
 
     const containerStyle = {
         width: "100%",
@@ -18,11 +14,17 @@ function KanbanBoard() {
         marginTop: "96px"
 
     }
+    const columns = [{title:'To Do', color: '#d4abab4e'},{title:'In Progress', color: '#fff7b761'},{title:'Done', color: '#afe8a88b'}
+    ]
     return (
         <div style={containerStyle}>
-            <KanbanCol type="pending" content="array1" />
-            <KanbanCol type="progress" content="array2"/>
-            <KanbanCol type="done" content="array3"/>
+            {columns.map((eachColumns)=>{
+             return( 
+                   <KanbanCol taskData={taskData} setTaskData={setTaskData} color={eachColumns.color} title={eachColumns.title}  />
+                )
+            })
+            
+            }
         </div>
     )
 }

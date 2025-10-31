@@ -20,6 +20,21 @@
   caret-color: transparent;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+
 .sidebar-list li {
   font-family: "Kantumruy Pro", sans-serif;
   font-size: 20px;
@@ -44,4 +59,17 @@
 .icon-img:hover{
   transform: scale(1.05);
   cursor: pointer;
+}
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 50%;   
+  cursor: pointer;
+  position: relative;
+}
+.checkbox:checked {
+  background-color: #348a3e;
+  border: none;
 }

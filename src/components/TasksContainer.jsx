@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 function TasksContainer() {
     const divStyle = {
@@ -10,8 +11,8 @@ function TasksContainer() {
       <div className='sidebar-list' style={divStyle}>
         <p>Tasks</p>
         <ul>
-        <li>Today</li>
-        <li>Tomorrow</li>
+        <Link to={'/'}><li>Today</li></Link>
+        <Link to={'/tomorrow'}><li>Tomorrow</li></Link>
         <li>Planned</li>
         <li>Completed</li>
         </ul>

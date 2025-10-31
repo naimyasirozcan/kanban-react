@@ -1,22 +1,31 @@
+import TaskCard from "./TaskCard"
 
-function KanbanCol(props) {
+function KanbanCol({title, color,taskData,setTaskData}) {
     const kanbanColStyle = {
         width: "300px",
         minHeight: "600px",
         height: "auto",
-        backgroundColor: props.type === "pending"
-        ? "#d4abab4e"
-        : props.type === "progress"
-        ? "#fff7b761"
-        : "#afe8a88b",
-        borderRadius: "36px"
+        backgroundColor: color,
+        borderRadius: "36px",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        alignItems: 'center'
     }
 
 
 
     return (
         <div style={kanbanColStyle}>
-
+            <h2 style={{textAlign:'center',marginTop:'20px'}}>{title}</h2>
+            {taskData.
+            filter((eachTask)=>{
+                return (
+                    eachTask.status === title
+                )
+            }).map((eachTask)=>{
+                return <TaskCard title={eachTask.title} priority={eachTask.priority} />
+            })}
         </div>
     )
 }

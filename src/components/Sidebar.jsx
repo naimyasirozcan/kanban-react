@@ -3,6 +3,7 @@ import TasksContainer from "./TasksContainer"
 import sideBarSwitchIcon from "../assets/img/sidebar-switch-icon-w.png"
 import addTaskIcon from "../assets/img/add-icon-w.png"
 import logoIcon from "../assets/img/logo-kanban.png"
+import { Link } from "react-router-dom"
 
 
 function Sidebar() {
