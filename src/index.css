@@ -5,64 +5,71 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #293241DB;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+}
+* {
+  margin:  0;
+  padding: 0;
+  user-select: none;
+  caret-color: transparent;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: inherit;
+  text-decoration: none;
 }
-a:hover {
-  color: #535bf2;
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.sidebar-list li {
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 4px 10px;
+  list-style: none;
+}
+.sidebar-list li:hover{
+  background-color: #f4f1de;
+  color: #293241;
+  border-radius: 12px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+.sidebar-list p {
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.icon-img {
+  transition: transform 0.25s ease;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.icon-img:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 50%;   
+  cursor: pointer;
+  position: relative;
+}
+.checkbox:checked {
+  background-color: #348a3e;
+  border: none;
 }
