@@ -13,8 +13,8 @@ function TasksContainer() {
         <ul>
         <Link to={'/'}><li>Today</li></Link>
         <Link to={'/tomorrow'}><li>Tomorrow</li></Link>
-        <li>Planned</li>
-        <li>Completed</li>
+        <Link to={'/planned'}><li>Planned</li></Link>
+        <Link to={'/completed'} ><li>Completed</li></Link>
         </ul>
     </div>
   )

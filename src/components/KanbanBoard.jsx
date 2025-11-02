@@ -14,13 +14,15 @@ function KanbanBoard({taskData,setTaskData}) {
         marginTop: "96px"
 
     }
+
     const columns = [{title:'To Do', color: '#d4abab4e'},{title:'In Progress', color: '#fff7b761'},{title:'Done', color: '#afe8a88b'}
     ]
+
     return (
         <div style={containerStyle}>
-            {columns.map((eachColumns)=>{
+            {columns.map((eachColumns, index)=>{
              return( 
-                   <KanbanCol taskData={taskData} setTaskData={setTaskData} color={eachColumns.color} title={eachColumns.title}  />
+                   <KanbanCol key={index} taskData={taskData} setTaskData={setTaskData} color={eachColumns.color} title={eachColumns.title}  />
                 )
             })
             

@@ -6,8 +6,8 @@
     "assignee": "Mary Davis",
     "status": "To Do",
     "priority": "High",
-    "createdDate": "2023-09-15",
-    "dueDate": "2023-09-30"
+    "createdDate": "2025-10-15",
+    "dueDate": "2025-11-04"
   },
   {
     "id": "2",
@@ -16,8 +16,8 @@
     "assignee": "Jane Smith",
     "status": "In Progress",
     "priority": "Medium",
-    "createdDate": "2023-09-16",
-    "dueDate": "2023-10-10"
+    "createdDate": "2025-10-16",
+    "dueDate": "2025-11-06"
   },
   {
     "id": "3",
@@ -26,8 +26,8 @@
     "assignee": "Mark Johnson",
     "status": "In Progress",
     "priority": "High",
-    "createdDate": "2023-09-17",
-    "dueDate": "2023-09-25"
+    "createdDate": "2025-10-20",
+    "dueDate": "2025-11-05"
   },
   {
     "id": "4",
@@ -36,8 +36,8 @@
     "assignee": "Sarah Brown",
     "status": "To Do",
     "priority": "High",
-    "createdDate": "2023-09-18",
-    "dueDate": "2023-10-05"
+    "createdDate": "2025-10-18",
+    "dueDate": "2025-11-07"
   },
   {
     "id": "5",
@@ -46,7 +46,107 @@
     "assignee": "David Wilson",
     "status": "Done",
     "priority": "Low",
-    "createdDate": "2023-09-19",
-    "dueDate": "2023-09-30"
+    "createdDate": "2025-10-19",
+    "dueDate": "2025-11-03"
+  },
+  {
+    "id": "6",
+    "title": "Optimize Database Queries",
+    "description": "Improve database performance by optimizing slow queries.",
+    "assignee": "Emily Carter",
+    "status": "In Progress",
+    "priority": "High",
+    "createdDate": "2025-10-21",
+    "dueDate": "2025-11-08"
+  },
+  {
+    "id": "7",
+    "title": "Implement Dark Mode",
+    "description": "Add a dark mode theme option for better user experience.",
+    "assignee": "Tom Anderson",
+    "status": "To Do",
+    "priority": "Medium",
+    "createdDate": "2025-10-22",
+    "dueDate": "2025-11-09"
+  },
+  {
+    "id": "8",
+    "title": "Set Up CI/CD Pipeline",
+    "description": "Automate build and deployment using GitHub Actions.",
+    "assignee": "Rachel Green",
+    "status": "In Progress",
+    "priority": "High",
+    "createdDate": "2025-10-23",
+    "dueDate": "2025-11-10"
+  },
+  {
+    "id": "9",
+    "title": "Create Marketing Assets",
+    "description": "Design social media banners and promotional graphics.",
+    "assignee": "Chris Miller",
+    "status": "To Do",
+    "priority": "Low",
+    "createdDate": "2025-10-24",
+    "dueDate": "2025-11-11"
+  },
+  {
+    "id": "10",
+    "title": "Improve Mobile Responsiveness",
+    "description": "Ensure the website is fully responsive across devices.",
+    "assignee": "Laura Scott",
+    "status": "In Progress",
+    "priority": "High",
+    "createdDate": "2025-10-25",
+    "dueDate": "2025-11-12"
+  },
+  {
+    "id": "11",
+    "title": "Test Payment Integration",
+    "description": "Run end-to-end tests for payment processing and refunds.",
+    "assignee": "James Parker",
+    "status": "To Do",
+    "priority": "High",
+    "createdDate": "2025-10-26",
+    "dueDate": "2025-11-13"
+  },
+  {
+    "id": "12",
+    "title": "Refactor Authentication Code",
+    "description": "Clean up and modularize authentication logic for better maintainability.",
+    "assignee": "Nina Lopez",
+    "status": "In Progress",
+    "priority": "Medium",
+    "createdDate": "2025-10-27",
+    "dueDate": "2025-11-09"
+  },
+  {
+    "id": "13",
+    "title": "Conduct User Testing",
+    "description": "Gather feedback from real users before final release.",
+    "assignee": "Alex Turner",
+    "status": "To Do",
+    "priority": "Medium",
+    "createdDate": "2025-10-28",
+    "dueDate": "2025-11-14"
+  },
+  {
+    "id": "14",
+    "title": "Fix UI Overlap Issue",
+    "description": "Resolve overlapping elements on small screen layouts.",
+    "assignee": "Megan White",
+    "status": "In Progress",
+    "priority": "High",
+    "createdDate": "2025-10-30",
+    "dueDate": "2025-11-15"
+  },
+  {
+    "id": "15",
+    "title": "Analyze Post-Launch Metrics",
+    "description": "Review traffic and engagement metrics after launch.",
+    "assignee": "Oliver King",
+    "status": "To Do",
+    "priority": "Low",
+    "createdDate": "2025-11-01",
+    "dueDate": "2025-11-15"
   }
 ]

@@ -24,7 +24,7 @@ function KanbanCol({title, color,taskData,setTaskData}) {
                     eachTask.status === title
                 )
             }).map((eachTask)=>{
-                return <TaskCard title={eachTask.title} priority={eachTask.priority} />
+                return <TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} />
             })}
         </div>
     )
