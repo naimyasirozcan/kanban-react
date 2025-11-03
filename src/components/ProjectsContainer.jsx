@@ -9,7 +9,7 @@ function ProjectsContainer() {
     }
   return (
       <div className='sidebar-list' style={divStyle}>
-        <p>Projects</p>
+        <p style={{paddingLeft: "10px"}}>Projects</p>
         <ul>
         <li>Today</li>
         <li>Tomorrow</li>

@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
     <div style={containerStyle}>
-      <Sidebar />
+      <Sidebar style={{display: "fixed", top: "0px", left: "0px"}} />
       <KanbanApp />
     </div>
     </BrowserRouter>
