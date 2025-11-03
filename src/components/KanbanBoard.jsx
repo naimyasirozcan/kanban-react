@@ -11,7 +11,7 @@ function KanbanBoard({taskData,setTaskData}) {
         justifyContent: "center",
         alignItems: "start",
         gap: "24px",
-        marginTop: "96px"
+        marginTop: "24px"
 
     }
 

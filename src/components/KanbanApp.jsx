@@ -6,8 +6,6 @@ import ListOfTasks from '../pages/ListOfTasks'
 import TaskDetails from './TaskDetails'
 
 
-
-
 function KanbanApp() {
 
   const [taskData, setTaskData] = useState(taskDataJSON)
@@ -40,14 +38,12 @@ function KanbanApp() {
             <Route element={<ListOfTasks taskData={taskData} setTaskData={setTaskData} title={eachTaskList.title} description={eachTaskList.description} />} path={`/${eachTaskList.title}`} />)
         })}
 
-        {taskData.map((eachTask) => {
-          return (
-            <Route element={<TaskDetails taskData={taskData} setTaskData={setTaskData} />} path={`/tasks/:paramId`} />)
-        })}
+
+        <Route element={<TaskDetails taskData={taskData} setTaskData={setTaskData} />} path={`/task/:paramId`} />
 
 
       </Routes>
-    
+
     </div>
   )
 }

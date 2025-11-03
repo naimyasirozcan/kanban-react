@@ -40,9 +40,9 @@ function ListOfTasks({ taskData, setTaskData, title, description }) {
             <ul style={{ width: "100%", display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px' }}>
                 {
                     (tasksToRender.map((eachTask) => {
-                        return (<Link style={{width: "100%", display:"flex", justifyContent:"center"}} to={`/tasks/${eachTask.id}`}>
-                            <TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />
-                        </Link>)
+                        return (
+                            <TaskCard key={eachTask.id} taskId={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />
+                        )
                     }))
                 }
             </ul>

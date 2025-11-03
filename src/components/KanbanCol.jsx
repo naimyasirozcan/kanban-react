@@ -32,9 +32,7 @@ function KanbanCol({ title, color, taskData, setTaskData, todaysTasks }) {
                     )
                 }).map((eachTask) => {
                     return (
-                        <Link to={`tasks/${eachTask.id}`}>
-                            <TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} />
-                        </Link>
+                            <TaskCard key={eachTask.id} taskId={eachTask.id} title={eachTask.title} priority={eachTask.priority} />
                     )
                 })}
         </div>

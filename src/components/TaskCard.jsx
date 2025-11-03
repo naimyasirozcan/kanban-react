@@ -1,4 +1,6 @@
-function TaskCard({ title, priority, cardType }) {
+import { Link } from "react-router-dom";
+
+function TaskCard({ title, taskId, priority, cardType }) {
   const cardDivStyle = {
     display: "flex",
     minHeight: "88px",
@@ -29,17 +31,19 @@ function TaskCard({ title, priority, cardType }) {
 
   const titleStyle = {
     width:
-      cardType === 'listCard' ? '400px' : "180px",
+      cardType === 'listCard' ? '100%' : "180px",
     color: "#000000",
     fontSize:
       cardType === 'listCard' ? '20px' : null
   }
 
   return (
-    <div style={cardDivStyle}>
+    <div className="task-card" style={cardDivStyle}>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
         {cardType === 'listCard' ? (<input className="checkbox" type="checkbox" />) : null}
+        <Link to={`/task/${taskId}`}>
         <p style={titleStyle}>{title}</p>
+        </Link>
       </div>
       <div style={piorityDivStyle}></div>
     </div>
