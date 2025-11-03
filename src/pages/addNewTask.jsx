@@ -20,7 +20,16 @@ function AddNewTask({taskData,setTaskData}) {
     function handleAddTaskData(e){
         e.preventDefault()
         setTaskData(prev=>([...prev,formData]))
-        
+        setFormData({
+            id:Math.floor(Math.random()*10000).toString(),
+            title:"",
+            description: "",
+            assignee: "",
+            status: "",
+            priority:"",
+            createdDate: new Date().toISOString().split('T')[0],
+            dueDate: "",
+        })
     }
     const formStyle = {
         display:'flex',
