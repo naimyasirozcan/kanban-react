@@ -34,8 +34,8 @@ function Sidebar() {
         </div>
         
         <div style={{padding: '20px', display:'flex', justifyContent:'space-between'}}> 
-            <img className="icon-img" style={{...imgSidebarStyle, height:'42px', width: '42px'}} src={logoIcon} alt="" />
-            <img className="icon-img" style={{...imgSidebarStyle, height:'42px', width: '42px'}} src={addTaskIcon} alt="" />
+            <img className="icon-img" style={{height:'42px', width: '42px'}} src={logoIcon} alt="" />
+            <img className="icon-img" style={{ height:'42px', width: '42px'}} src={addTaskIcon} alt="" />
         </div>
     </div>
   )

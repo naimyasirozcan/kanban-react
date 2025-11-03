@@ -14,7 +14,9 @@
 
 }
 
-body { overflow: hidden; }
+body {
+  overflow: hidden;
+}
 
 * {
   margin: 0;
@@ -92,4 +94,9 @@ a:active {
 .kanban-app::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 3px;
+}
+
+.background-blur {
+  backdrop-filter: blur(28.4px);
+  -webkit-backdrop-filter: blur(28.4px)
 }

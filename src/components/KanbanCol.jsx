@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import TaskCard from "./TaskCard"
 
 function KanbanCol({ title, color, taskData, setTaskData, todaysTasks }) {
@@ -30,7 +31,11 @@ function KanbanCol({ title, color, taskData, setTaskData, todaysTasks }) {
                         eachTask.status === title
                     )
                 }).map((eachTask) => {
-                    return <TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} />
+                    return (
+                        <Link to={`tasks/${eachTask.id}`}>
+                            <TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} />
+                        </Link>
+                    )
                 })}
         </div>
     )
