@@ -37,7 +37,7 @@ function ListOfTasks({ taskData, setTaskData, title, description }) {
         <>
             <TitleAndDescription title={title[0].toUpperCase() + title.slice(1)} description={description} />
 
-            <ul style={{ width: "100%", display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px' }}>
+            <ul style={{ width: "100%", display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px', marginBottom: '20px' }}>
                 {
                     (tasksToRender.map((eachTask) => {
                         return (
