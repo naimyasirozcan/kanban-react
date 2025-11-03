@@ -9,7 +9,7 @@ function KanbanBoard({taskData,setTaskData}) {
         height: "min-content",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "start",
         gap: "24px",
         marginTop: "96px"
 
@@ -17,6 +17,10 @@ function KanbanBoard({taskData,setTaskData}) {
 
     const columns = [{title:'To Do', color: '#d4abab4e'},{title:'In Progress', color: '#fff7b761'},{title:'Done', color: '#afe8a88b'}
     ]
+
+    const todaysTasks = taskData.filter((eachTask) => {
+        return eachTask.dueDate
+    })
 
     return (
         <div style={containerStyle}>

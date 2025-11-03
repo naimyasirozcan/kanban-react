@@ -11,10 +11,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
 }
+
+body { overflow: hidden; }
+
 * {
-  margin:  0;
+  margin: 0;
   padding: 0;
   user-select: none;
   caret-color: transparent;
@@ -24,10 +27,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 a:visited {
   color: inherit;
   text-decoration: none;
 }
+
 a:hover,
 a:active {
   color: inherit;
@@ -42,34 +47,49 @@ a:active {
   padding: 4px 10px;
   list-style: none;
 }
-.sidebar-list li:hover{
+
+.sidebar-list li:hover {
   background-color: #f4f1de;
   color: #293241;
   border-radius: 12px;
   cursor: pointer;
 }
+
 .sidebar-list p {
   font-family: "Kantumruy Pro", sans-serif;
   font-size: 24px;
   font-weight: 700;
 }
+
 .icon-img {
   transition: transform 0.25s ease;
 }
-.icon-img:hover{
+
+.icon-img:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
+
 .checkbox {
   appearance: none;
   width: 20px;
   height: 20px;
   border: 2px solid #333;
-  border-radius: 50%;   
+  border-radius: 50%;
   cursor: pointer;
   position: relative;
 }
+
 .checkbox:checked {
   background-color: #348a3e;
   border: none;
+}
+
+.kanban-app::-webkit-scrollbar {
+  width: 6px;
+}
+
+.kanban-app::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
 }

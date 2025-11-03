@@ -22,6 +22,15 @@ function ListOfTasks({ taskData, setTaskData, title, description }) {
         return dueDateObj.getTime() > tomorrowsDate.getTime()
     }))
 
+    const completedTasks = [] // dont forget!!!!!
+
+    let tasksToRender = title === "tomorrow" ?
+    tomorrowTasks :
+    title === "planned"?
+    plannedTasks :
+    title === "completed" ?
+    completedTasks :
+    null
 
     return (
 
@@ -29,14 +38,10 @@ function ListOfTasks({ taskData, setTaskData, title, description }) {
             <TitleAndDescription title={title[0].toUpperCase() + title.slice(1)} description={description} />
 
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px' }}>
-                {title === "tomorrow" ?
-                    (tomorrowTasks.map((eachTask) => {
+                {
+                    (tasksToRender.map((eachTask) => {
                         return (<TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />)
                     }))
-                    : title === "planned" ?
-                    (plannedTasks.map((eachTask) => {
-                        return (<TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />)
-                    })) : null
                 }
             </ul>
 
