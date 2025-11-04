@@ -7,7 +7,7 @@
     "status": "To Do",
     "priority": "High",
     "createdDate": "2025-10-15",
-    "dueDate": "2025-11-04"
+    "dueDate": "2025-11-05"
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "status": "In Progress",
     "priority": "Medium",
     "createdDate": "2025-10-16",
-    "dueDate": "2025-11-06"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "3",
@@ -37,7 +37,7 @@
     "status": "To Do",
     "priority": "High",
     "createdDate": "2025-10-18",
-    "dueDate": "2025-11-07"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "5",
@@ -47,7 +47,7 @@
     "status": "Done",
     "priority": "Low",
     "createdDate": "2025-10-19",
-    "dueDate": "2025-11-03"
+    "dueDate": "2025-11-05"
   },
   {
     "id": "6",
@@ -57,7 +57,7 @@
     "status": "In Progress",
     "priority": "High",
     "createdDate": "2025-10-21",
-    "dueDate": "2025-11-03"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "7",
@@ -67,7 +67,7 @@
     "status": "To Do",
     "priority": "Medium",
     "createdDate": "2025-10-22",
-    "dueDate": "2025-11-09"
+    "dueDate": "2025-11-05"
   },
   {
     "id": "8",
@@ -77,7 +77,7 @@
     "status": "In Progress",
     "priority": "High",
     "createdDate": "2025-10-23",
-    "dueDate": "2025-11-03"
+    "dueDate": "2025-11-05"
   },
   {
     "id": "9",
@@ -87,7 +87,7 @@
     "status": "To Do",
     "priority": "Low",
     "createdDate": "2025-10-24",
-    "dueDate": "2025-11-11"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "10",
@@ -97,7 +97,7 @@
     "status": "In Progress",
     "priority": "High",
     "createdDate": "2025-10-25",
-    "dueDate": "2025-11-12"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "11",
@@ -107,7 +107,7 @@
     "status": "To Do",
     "priority": "High",
     "createdDate": "2025-10-26",
-    "dueDate": "2025-11-13"
+    "dueDate": "2025-11-05"
   },
   {
     "id": "12",
@@ -117,7 +117,7 @@
     "status": "In Progress",
     "priority": "Medium",
     "createdDate": "2025-10-27",
-    "dueDate": "2025-11-09"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "13",
@@ -137,7 +137,7 @@
     "status": "In Progress",
     "priority": "High",
     "createdDate": "2025-10-30",
-    "dueDate": "2025-11-15"
+    "dueDate": "2025-11-04"
   },
   {
     "id": "15",
@@ -147,6 +147,6 @@
     "status": "To Do",
     "priority": "Low",
     "createdDate": "2025-11-01",
-    "dueDate": "2025-11-15"
+    "dueDate": "2025-11-04"
   }
 ]

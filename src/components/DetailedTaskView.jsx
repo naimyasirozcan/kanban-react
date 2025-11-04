@@ -5,15 +5,16 @@ import { useState } from "react"
 
 
 
-function TaskDetails({ taskData, setTaskData }) {
-
+function DetailedTaskView({ taskData, setTaskData }) {
+  
   const { paramId } = useParams()
   const navigate = useNavigate() // explain igor later, used to go one page back while close icon clicked
-
+  
   const taskToShow = taskData.find((task) => {
     return paramId === task.id
   })
-
+  
+  // ------------------------------style--------------------------------
   const confirmationDivBtn = {
     width: "110px",
     height: "55px",
@@ -58,6 +59,8 @@ function TaskDetails({ taskData, setTaskData }) {
     borderRadius: "24px",
   }
 
+  // ---------------------style end--------------------------------
+
   const [quitConfirmStyle, setQuitConfirmStyle] = useState(quitDivStyle)
 
   const taskDiv = {
@@ -84,9 +87,10 @@ function TaskDetails({ taskData, setTaskData }) {
     year: "numeric"
   })
 
-  const handleDelete = () => {
+  // const handleDelete = () => {
+    
+  // }
 
-  }
 
   const showConfirmation = () => {
     const clone = structuredClone(quitConfirmStyle)
@@ -159,7 +163,7 @@ function TaskDetails({ taskData, setTaskData }) {
 
         <div style={{ display: "flex", gap: "24px" }}>
           <button onClick={closeConfirmation} style={confirmationDivBtn}>Cancel</button>
-          <button onClick={handleDelete} style={confirmationDivBtn}>Delete</button>
+          <button style={confirmationDivBtn}>Delete</button>
         </div>
       </div>
 
@@ -169,4 +173,4 @@ function TaskDetails({ taskData, setTaskData }) {
 
 
 
-export default TaskDetails
+export default DetailedTaskView

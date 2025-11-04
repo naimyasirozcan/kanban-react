@@ -3,7 +3,7 @@ import { useState } from "react"
 import TodayPage from "../pages/TodayPage"
 import { Route, Routes } from 'react-router-dom'
 import ListOfTasks from '../pages/ListOfTasks'
-import TaskDetails from './TaskDetails'
+import DetailedTaskView from './DetailedTaskView'
 
 
 function KanbanApp() {
@@ -39,7 +39,7 @@ function KanbanApp() {
         })}
 
 
-        <Route element={<TaskDetails taskData={taskData} setTaskData={setTaskData} />} path={`/task/:paramId`} />
+        <Route element={<DetailedTaskView taskData={taskData} setTaskData={setTaskData} />} path={`/task/:paramId`} />
 
 
       </Routes>

@@ -16,6 +16,7 @@ function Sidebar() {
         justifyContent: "space-between",
         top: "0px",
         left: "0px",
+        zIndex: "2"
     }
     const imgSidebarStyle = {
         width:'48px',
