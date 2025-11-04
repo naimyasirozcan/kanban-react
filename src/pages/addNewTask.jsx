@@ -15,10 +15,13 @@ function AddNewTask({taskData,setTaskData}) {
     )
     function handleChange(e){
         const {name,value} = e.target
-        setFormData(prev=>({...prev,[name] : value}))
+        const cloneState = {...formData}
+        cloneState[name] = value
+        setFormData(cloneState)
     }
     function handleAddTaskData(e){
         e.preventDefault()
+        setFormData()
         setTaskData(prev=>([...prev,formData]))
         setFormData({
             id:Math.floor(Math.random()*10000).toString(),
