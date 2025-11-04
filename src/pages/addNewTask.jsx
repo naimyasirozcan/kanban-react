@@ -37,13 +37,24 @@ function AddNewTask({taskData,setTaskData}) {
     const formStyle = {
         display:'flex',
         flexDirection: 'column',
+        justifyContent:'center',
+        alignItems:'center',
         gap: '20px',
+        fontSize: '22px'
     }
     const divFormStyle = {
         backgroundColor:'#14161990',
-        margin: '30px',
+        margin: '0 auto',
+        marginTop: '20px',
         padding: '20px',
-        borderRadius: '20px'
+        borderRadius: '20px',
+        width: '400px',
+    }
+    const labelStyle ={
+        display:'flex',
+        flexDirection: 'column',
+        width: '300px',
+        gap:'10px'
     }
     console.log(taskData)
   return (
@@ -51,19 +62,19 @@ function AddNewTask({taskData,setTaskData}) {
       <TitleAndDescription title={'Create a new Task'} description={"Add all task's details"}/>
       <div style={divFormStyle}>
             <form style={formStyle}>
-            <label>
-                Name:
+            <label style={labelStyle}>
+                Name: 
                 <input name='title' type="text" placeholder="Task Title"  onChange={handleChange} value={formData.title}></input>
             </label>
-            <label>
+            <label style={labelStyle}>
                 Description:
                 <input name ='description' type="text" placeholder="Task Description" onChange={handleChange} value={formData.description}/>
             </label>
-            <label>
+            <label style={labelStyle}>
                 Assignee:
                 <input name='assignee' type="text" placeholder="Eg. John" onChange={handleChange} value={formData.assignee} />
-            </label>
-            <label>
+            </label >
+            <label style={labelStyle}>
                 Status:
                 <select name="status" onChange={handleChange} value={formData.status} >
                     <option value="">-- None --</option>
@@ -72,7 +83,7 @@ function AddNewTask({taskData,setTaskData}) {
                     <option value="Done"> Done </option>
                 </select>
             </label>
-            <label>
+            <label style={labelStyle}>
                 Priority:
                 <select name="priority" onChange={handleChange} value={formData.priority} >
                     <option value="">-- None --</option>
@@ -81,11 +92,11 @@ function AddNewTask({taskData,setTaskData}) {
                     <option value="High"> High </option>
                 </select>
             </label>
-            <label>
+            <label style={labelStyle}>
                 Due Date:
                 <input type="date" name="dueDate" onChange={handleChange} value={formData.dueDate}/>
             </label>
-            <button type="submit"onClick={handleAddTaskData}>Create Task</button>
+            <button style={{width:'200px',fontSize:'20px'}} type="submit"onClick={handleAddTaskData}>Create Task</button>
         </form>
         </div>
     </>
