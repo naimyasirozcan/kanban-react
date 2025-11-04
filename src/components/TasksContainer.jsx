@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function TasksContainer() {
+function TasksContainer({taskData,setTaskData}) {
     const divStyle = {
         display: 'flex',
         flexDirection: 'column',

@@ -1,9 +1,9 @@
-import ProjectsContainer from "./ProjectsContainer"
-import TasksContainer from "./TasksContainer"
-import sideBarSwitchIcon from "../assets/img/sidebar-switch-icon-w.png"
-import addTaskIcon from "../assets/img/add-icon-w.png"
-import logoIcon from "../assets/img/logo-kanban.png"
-
+import ProjectsContainer from "./ProjectsContainer";
+import TasksContainer from "./TasksContainer";
+import sideBarSwitchIcon from "../assets/img/sidebar-switch-icon-w.png";
+import addTaskIcon from "../assets/img/add-icon-w.png";
+import logoIcon from "../assets/img/logo-kanban.png";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     const sidebarDivStyle = {
@@ -38,8 +38,32 @@ function Sidebar() {
             <img className="icon-img" style={{height:'42px', width: '42px'}} src={logoIcon} alt="" />
             <img className="icon-img" style={{ height:'42px', width: '42px'}} src={addTaskIcon} alt="" />
         </div>
+      </div>
+
+      <div
+        style={{
+          padding: "20px",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <img
+          className="icon-img"
+          style={{ ...imgSidebarStyle, height: "42px", width: "42px" }}
+          src={logoIcon}
+          alt=""
+        />
+        <Link to={"/add-new-task"}>
+          <img
+            className="icon-img"
+            style={{ ...imgSidebarStyle, height: "42px", width: "42px" }}
+            src={addTaskIcon}
+            alt=""
+          />{" "}
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

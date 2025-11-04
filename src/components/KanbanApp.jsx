@@ -4,6 +4,9 @@ import TodayPage from "../pages/TodayPage"
 import { Route, Routes } from 'react-router-dom'
 import ListOfTasks from '../pages/ListOfTasks'
 import DetailedTaskView from './DetailedTaskView'
+import AddNewTask from '../pages/addNewTask'
+
+
 
 
 function KanbanApp() {
@@ -32,7 +35,7 @@ function KanbanApp() {
     <div className="kanban-app" style={kanbanAppStyle}>
       <Routes>
         <Route element={<TodayPage taskData={taskData} setTaskData={setTaskData} />} path='/' />
-
+        <Route element={<AddNewTask taskData={taskData} setTaskData={setTaskData} />} path='/add-new-task'/>
         {taskLists.map((eachTaskList) => {
           return (
             <Route element={<ListOfTasks taskData={taskData} setTaskData={setTaskData} title={eachTaskList.title} description={eachTaskList.description} />} path={`/${eachTaskList.title}`} />)
