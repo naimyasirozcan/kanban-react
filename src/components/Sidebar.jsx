@@ -24,6 +24,7 @@ function Sidebar() {
     }
 
   return (
+    
     <div style={sidebarDivStyle}>
         <div style={{padding: '20px'}}> <img className="icon-img" style={imgSidebarStyle} src={sideBarSwitchIcon} alt="" />
             <div>
@@ -36,24 +37,7 @@ function Sidebar() {
         
         <div style={{padding: '20px', display:'flex', justifyContent:'space-between'}}> 
             <img className="icon-img" style={{height:'42px', width: '42px'}} src={logoIcon} alt="" />
-            <img className="icon-img" style={{ height:'42px', width: '42px'}} src={addTaskIcon} alt="" />
-        </div>
-      </div>
-
-      <div
-        style={{
-          padding: "20px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <img
-          className="icon-img"
-          style={{ ...imgSidebarStyle, height: "42px", width: "42px" }}
-          src={logoIcon}
-          alt=""
-        />
-        <Link to={"/add-new-task"}>
+            <Link to={"/add-new-task"}>
           <img
             className="icon-img"
             style={{ ...imgSidebarStyle, height: "42px", width: "42px" }}
@@ -61,8 +45,8 @@ function Sidebar() {
             alt=""
           />{" "}
         </Link>
+        </div>
       </div>
-    </div>
   );
 }
 
