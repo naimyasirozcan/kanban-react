@@ -55,7 +55,6 @@ function AddNewTask({taskData,setTaskData}) {
         width: '300px',
         gap:'10px'
     }
-    console.log(taskData)
   return (
     <>
       <TitleAndDescription title={'Create a new Task'} description={"Add all task's details"}/>

@@ -7,12 +7,30 @@ import { useState } from "react"
 
 function DetailedTaskView({ taskData, setTaskData }) {
   
+  const [quitConfirmStyle, setQuitConfirmStyle] = useState({
+    position: "absolute",
+    display: "none",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#000000d8",
+    color: "#fff",
+    width: "500px",
+    height: "250px",
+    top: '100px',
+    left: '100px',
+    borderRadius: "24px",
+  })
   const { paramId } = useParams()
   const navigate = useNavigate() // explain igor later, used to go one page back while close icon clicked
   
   const taskToShow = taskData.find((task) => {
     return paramId === task.id
   })
+
+  if (!taskToShow) {
+  return null
+}
   
   // ------------------------------style--------------------------------
   const confirmationDivBtn = {
@@ -44,24 +62,10 @@ function DetailedTaskView({ taskData, setTaskData }) {
     marginTop: "100px"
   }
 
-  const quitDivStyle = {
-    position: "absolute",
-    display: "none",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#000000d8",
-    color: "#fff",
-    width: "500px",
-    height: "250px",
-    top: `${(parseInt(taskDetailsDivStyle.height) - 250) / 2}px`,
-    left: `${((parseInt(taskDetailsDivStyle.width) - 500) / 2)}px`,
-    borderRadius: "24px",
-  }
 
   // ---------------------style end--------------------------------
 
-  const [quitConfirmStyle, setQuitConfirmStyle] = useState(quitDivStyle)
+ 
 
   const taskDiv = {
     display: "flex",
@@ -87,10 +91,21 @@ function DetailedTaskView({ taskData, setTaskData }) {
     year: "numeric"
   })
 
-  // const handleDelete = () => {
+  const handleDelete = () => {
+    const clone = [...taskData]
+    console.log(clone)
+    const indexToDelete = clone.findIndex((obj)=>{
+      return obj.id === paramId
+    })
+    clone.splice(indexToDelete,1)
+    console.log('clone after splice: ',clone)
+    navigate(-1)
+    setTaskData(clone)
     
-  // }
-
+    // We need to access the taskData and delete it from the array
+    // We can use navigate -1 to go to the previous page. 
+  }
+  console.log(taskData)
 
   const showConfirmation = () => {
     const clone = structuredClone(quitConfirmStyle)
@@ -163,7 +178,7 @@ function DetailedTaskView({ taskData, setTaskData }) {
 
         <div style={{ display: "flex", gap: "24px" }}>
           <button onClick={closeConfirmation} style={confirmationDivBtn}>Cancel</button>
-          <button style={confirmationDivBtn}>Delete</button>
+          <button style={confirmationDivBtn} onClick={handleDelete}>Delete</button>
         </div>
       </div>
 
