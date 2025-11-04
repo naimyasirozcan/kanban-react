@@ -12,12 +12,17 @@ const containerStyle = {
 function App() {
 
   return (
+
+    <>
     <BrowserRouter>
     <div style={containerStyle}>
-      <Sidebar style={{display: "fixed", top: "0px", left: "0px"}} />
+      <Sidebar  />
       <KanbanApp />
     </div>
     </BrowserRouter>
+    </>
+
+
   )
 }
 

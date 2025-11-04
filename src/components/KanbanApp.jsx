@@ -1,10 +1,9 @@
-
 import taskDataJSON from '../assets/data/kanbanData.json'
 import { useState } from "react"
 import TodayPage from "../pages/TodayPage"
 import { Route, Routes } from 'react-router-dom'
-// import Tomorrow from '../pages/Tomorrow'
 import ListOfTasks from '../pages/ListOfTasks'
+import DetailedTaskView from './DetailedTaskView'
 import AddNewTask from '../pages/addNewTask'
 
 
@@ -18,12 +17,12 @@ function KanbanApp() {
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     paddingLeft: "303px",
     height: "100vh",
     overflowY: "auto",
     scrollbarWidth: "thin",
     scrollbarColor: "#888 transparent"
-
   }
 
   const taskLists = [
@@ -41,7 +40,13 @@ function KanbanApp() {
           return (
             <Route element={<ListOfTasks taskData={taskData} setTaskData={setTaskData} title={eachTaskList.title} description={eachTaskList.description} />} path={`/${eachTaskList.title}`} />)
         })}
+
+
+        <Route element={<DetailedTaskView taskData={taskData} setTaskData={setTaskData} />} path={`/task/:paramId`} />
+
+
       </Routes>
+
     </div>
   )
 }

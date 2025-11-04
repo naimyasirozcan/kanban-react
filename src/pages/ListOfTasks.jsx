@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import TaskCard from "../components/TaskCard"
 import TitleAndDescription from "../components/TitleAndDescription"
 
@@ -25,22 +25,24 @@ function ListOfTasks({ taskData, setTaskData, title, description }) {
     const completedTasks = [] // dont forget!!!!!
 
     let tasksToRender = title === "tomorrow" ?
-    tomorrowTasks :
-    title === "planned"?
-    plannedTasks :
-    title === "completed" ?
-    completedTasks :
-    null
+        tomorrowTasks :
+        title === "planned" ?
+            plannedTasks :
+            title === "completed" ?
+                completedTasks :
+                null
 
     return (
 
         <>
             <TitleAndDescription title={title[0].toUpperCase() + title.slice(1)} description={description} />
 
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px' }}>
+            <ul style={{ width: "100%", display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginTop: '20px', marginBottom: '20px' }}>
                 {
                     (tasksToRender.map((eachTask) => {
-                        return (<TaskCard key={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />)
+                        return (
+                            <TaskCard key={eachTask.id} taskId={eachTask.id} title={eachTask.title} priority={eachTask.priority} cardType={'listCard'} />
+                        )
                     }))
                 }
             </ul>

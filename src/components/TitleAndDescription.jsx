@@ -3,9 +3,7 @@
 function TitleAndDescription(props) {
     const containerStyle = {
         textAlign: "center",
-        marginTop: "100px",
-
-        
+        marginTop: "100px",        
     }
 
   return (

@@ -1,7 +1,7 @@
 
 function ProjectsContainer() {
     const divStyle = {
-        display: 'flex',
+        display: 'none',
         flexDirection: 'column',
         gap: '10px',
         padding: '0 16px',

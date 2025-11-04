@@ -14,7 +14,9 @@
 
 }
 
-body { overflow: hidden; }
+body {
+  overflow: hidden;
+}
 
 * {
   margin: 0;
@@ -92,4 +94,24 @@ a:active {
 .kanban-app::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 3px;
+}
+
+.background-blur {
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px)
+}
+
+.blur-layer {
+  filter: blur(30px)
+}
+
+.task-card {
+  background-color: #ffffff72;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
