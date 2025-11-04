@@ -21,7 +21,6 @@ function AddNewTask({taskData,setTaskData}) {
     }
     function handleAddTaskData(e){
         e.preventDefault()
-        setFormData()
         setTaskData(prev=>([...prev,formData]))
         setFormData({
             id:Math.floor(Math.random()*10000).toString(),
