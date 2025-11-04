@@ -1,12 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom"
 import TitleAndDescription from "./TitleAndDescription"
 import closeIcon from "../assets/img/close-icon-w.png"
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
+import EachTaskDetail from "./EachTaskDetail"
 
 
 function DetailedTaskView({ taskData, setTaskData }) {
-  
+
   const [quitConfirmStyle, setQuitConfirmStyle] = useState({
     position: "absolute",
     display: "none",
@@ -21,17 +21,47 @@ function DetailedTaskView({ taskData, setTaskData }) {
     left: '100px',
     borderRadius: "24px",
   })
+  const [isEditing, setIsEditing] = useState(false)
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === "Enter") {
+        if (isEditing === true) {
+
+          const clone = [...taskData]
+          const indexToUpdate = clone.findIndex((obj) => {
+            return obj.id === paramId
+          })
+
+          clone[indexToUpdate].assignee = newAssignee
+
+          setTaskData(clone)
+          setIsEditing(false)
+        }
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    // cleanup — remove o listener quando o componente sair da tela
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isEditing]);
+
+
+
+
+
   const { paramId } = useParams()
   const navigate = useNavigate() // explain igor later, used to go one page back while close icon clicked
-  
+
   const taskToShow = taskData.find((task) => {
     return paramId === task.id
   })
 
   if (!taskToShow) {
-  return null
-}
-  
+    return null
+  }
+
   // ------------------------------style--------------------------------
   const confirmationDivBtn = {
     width: "110px",
@@ -65,15 +95,9 @@ function DetailedTaskView({ taskData, setTaskData }) {
 
   // ---------------------style end--------------------------------
 
- 
 
-  const taskDiv = {
-    display: "flex",
-    flexDirection: "column",
-    width: "40%",
-    height: "120px",
-    justifyContent: "center"
-  }
+
+
 
   const createdDateObj = new Date(taskToShow.createdDate)
 
@@ -91,21 +115,28 @@ function DetailedTaskView({ taskData, setTaskData }) {
     year: "numeric"
   })
 
+  const handleSwitchEdit = (e) => {
+    console.log("clicked")
+    console.log(e.target.parent)
+    isEditing === true ?
+      setIsEditing(false) :
+      setIsEditing(true)
+
+    console.log(isEditing)
+
+  }
+
   const handleDelete = () => {
     const clone = [...taskData]
     console.log(clone)
-    const indexToDelete = clone.findIndex((obj)=>{
+    const indexToDelete = clone.findIndex((obj) => {
       return obj.id === paramId
     })
-    clone.splice(indexToDelete,1)
-    console.log('clone after splice: ',clone)
+    clone.splice(indexToDelete, 1)
+    console.log('clone after splice: ', clone)
     navigate(-1)
     setTaskData(clone)
-    
-    // We need to access the taskData and delete it from the array
-    // We can use navigate -1 to go to the previous page. 
   }
-  console.log(taskData)
 
   const showConfirmation = () => {
     const clone = structuredClone(quitConfirmStyle)
@@ -123,6 +154,17 @@ function DetailedTaskView({ taskData, setTaskData }) {
     setQuitConfirmStyle(clone)
   }
 
+  let newAssignee = null
+
+
+  const changeHandle = (e) => {
+    console.log(e.target.value)
+
+    e.target.name === "assignee" ?
+      newAssignee = e.target.value : null
+  }
+
+  console.log(newAssignee)
 
 
   return (
@@ -135,29 +177,23 @@ function DetailedTaskView({ taskData, setTaskData }) {
           navigate(-1)
         }}
       />
+
       <TitleAndDescription title={taskToShow.title} description={taskToShow.description} />
 
       <div style={{ padding: "60px", display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
-        <div style={taskDiv}>
-          <h2>Assignee:</h2>
-          <p style={{ fontSize: "24px" }}>{taskToShow.assignee}</p>
-        </div>
-        <div style={taskDiv}>
-          <h2>Created on:</h2>
-          <p style={{ fontSize: "24px" }}>{formattedCreatedDate}</p>
-        </div>
-        <div style={taskDiv}>
-          <h2>Status:</h2>
-          <p style={{ fontSize: "24px" }}>{taskToShow.status}</p>
-        </div>
-        <div style={taskDiv}>
-          <h2>Due Date:</h2>
-          <p style={{ fontSize: "24px" }}>{formattedDueDate}</p>
-        </div>
-        <div style={taskDiv}>
-          <h2>Priority:</h2>
-          <p style={{ fontSize: "24px" }}>{taskToShow.priority}</p>
-        </div>
+
+
+        <EachTaskDetail onChange={changeHandle} onClick={handleSwitchEdit} name={"status"} type={"dropdown"} parContent={taskToShow.status} isEditing={isEditing} title={"Status"} />
+
+        <EachTaskDetail onChange={changeHandle} onClick={handleSwitchEdit} name={"assignee"} type={"text"} parContent={taskToShow.assignee} isEditing={isEditing} title={"Assignee"} />
+
+        <EachTaskDetail onChange={changeHandle} onClick={handleSwitchEdit} name={"priority"} type={"dropdown"} parContent={taskToShow.priority} isEditing={isEditing} title={"Priority"} />
+
+        <EachTaskDetail onChange={changeHandle} onClick={handleSwitchEdit} name={"createdDate"} type={"date"} parContent={formattedCreatedDate} isEditing={isEditing} title={"Creation Date"} />
+
+        <EachTaskDetail onChange={changeHandle} onClick={handleSwitchEdit} name={"dueDate"} type={"date"} parContent={formattedDueDate} isEditing={isEditing} title={"Due Date"} />
+
+
         <div style={{
           width: "40%",
           height: "120px",
@@ -165,9 +201,10 @@ function DetailedTaskView({ taskData, setTaskData }) {
           alignItems: "center",
           gap: "24px"
         }}>
-          <button style={taskDetailsBtn}>Edit</button>
+          {/* <button style={taskDetailsBtn}>Edit</button> */}
           <button style={taskDetailsBtn} onClick={showConfirmation}>Delete</button>
         </div>
+
       </div>
 
       <div
